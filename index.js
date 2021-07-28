@@ -7,8 +7,8 @@ class CountdownTimer {
 
   createTime() {
     const currentTime = Date.now();
-    const difference = this.targetDate - currentTime;
-    const timeForCount = this.receiveTime(difference);    
+    const diff = this.targetDate - currentTime;
+    const timeForCount = this.receiveTime(diff);    
     this.clockFace(timeForCount);
 
     if (difference < 0) {
