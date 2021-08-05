@@ -8,13 +8,12 @@ class CountdownTimer {
   createTime() {
     const currentTime = Date.now();
     const diff = this.targetDate - currentTime;
-    const timeForCount = this.receiveTime(diff);    
+    const timeForCount = this.receiveTime(diff);
     this.clockFace(timeForCount);
 
     if (difference < 0) {
       clearInterval(this.timeId);
-      document.querySelector("#timer-1").textContent =
-        "Happy New Year";
+      document.querySelector("#timer-1").textContent = "Happy New Year";
       return;
     }
   }
@@ -32,7 +31,7 @@ class CountdownTimer {
   }
 
   clockFace({ days, hours, mins, secs }) {
-   // refs.frontSide.textContent = `${days}:${hours}:${mins}:${secs}`;
+    // refs.frontSide.textContent = `${days}:${hours}:${mins}:${secs}`;
     document.querySelector('[data-value="days"]').textContent = `${days}`;
     document.querySelector('[data-value="hours"]').textContent = `${hours}`;
     document.querySelector('[data-value="mins"]').textContent = `${mins}`;
@@ -48,6 +47,7 @@ class CountdownTimer {
     const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
 
     return { days, hours, mins, secs };
+    //document.querySelector("span").innerText = '${days}:${hours}:${mins}:${secs}';
   }
 }
 
