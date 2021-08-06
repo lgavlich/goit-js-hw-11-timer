@@ -7,8 +7,8 @@ class CountdownTimer {
 
   createTime() {
     const currentTime = Date.now();
-    const diff = this.targetDate - currentTime;
-    const timeForCount = this.receiveTime(diff);
+    const difference = this.targetDate - currentTime;
+    const timeForCount = this.receiveTime(difference);
     this.clockFace(timeForCount);
 
     if (difference < 0) {
@@ -36,6 +36,7 @@ class CountdownTimer {
     document.querySelector('[data-value="hours"]').textContent = `${hours}`;
     document.querySelector('[data-value="mins"]').textContent = `${mins}`;
     document.querySelector('[data-value="secs"]').textContent = `${secs}`;
+  
   }
 
   receiveTime(time) {
@@ -47,7 +48,7 @@ class CountdownTimer {
     const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
 
     return { days, hours, mins, secs };
-    //document.querySelector("span").innerText = '${days}:${hours}:${mins}:${secs}';
+    
   }
 }
 
